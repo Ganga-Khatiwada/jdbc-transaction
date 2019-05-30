@@ -22,17 +22,17 @@
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3306/TDB" />
+		<property name="url" value="jdbc:mysql://localhost:3306/moviedatabase" />
 		<property name="username" value="root" />
 		<property name="password" value="Root@123" />
 	</bean>
 
-	<bean id="customerDAO" class="com.stackroute.spring.jdbc.dao.CustomerDAOImpl">
+	<bean id="movieDAO" class="com.stackroute.spring.jdbc.dao.MovieDAOImpl">
 		<property name="dataSource" ref="dataSource"></property>
 	</bean>
 
-	<bean id="customerManager" class="com.stackroute.spring.jdbc.service.CustomerManagerImpl">
-		<property name="customerDAO" ref="customerDAO"></property>
+	<bean id="movieManager" class="com.stackroute.spring.jdbc.service.MovieManagerImpl">
+		<property name="movieDAO" ref="movieDAO"></property>
 	</bean>
 
 </beans>
